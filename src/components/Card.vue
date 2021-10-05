@@ -78,23 +78,21 @@ export default {
   },
   methods: {
     reorganize: function () {
-      this.cards = [];
-      this.loading = true;
-      this.error = false;
-      fetch("https://random-data-api.com/api/name/random_name?size=12")
-        .then((res) => res.json())
-        .then((data) => {
-          this.loading = false;
-          this.error = false;
-          this.cards = data;
-        })
-        .catch((err) => {
-          this.loading = false;
-          this.error = true;
-          console.log(err);
-        });
+      let currentIndex = this.cards.length,
+        randomIndex;
+      // While there remain elements to shuffle...
+      while (currentIndex != 0) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        // And swap it with the current element.
+        [this.cards[currentIndex], this.cards[randomIndex]] = [
+          this.cards[randomIndex],
+          this.cards[currentIndex],
+        ];
+      }
     },
-  },
+  }
 };
 </script>
 
