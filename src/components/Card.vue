@@ -53,7 +53,7 @@
 
 <script>
 export default {
-  name: "MainPage",
+  name: "Card",
   data() {
     return {
       cards: [],

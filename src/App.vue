@@ -1,13 +1,13 @@
 <template>
-  <MainPage/>
+  <Card/>
 </template>
 
 <script>
-import MainPage from './components/MainPage.vue'
+import Card from './components/Card.vue'
 export default {
   name: 'App',
   components: {
-    MainPage
+    Card
   }
 }
 </script>
